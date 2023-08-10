@@ -1,0 +1,55 @@
+<div class="wrapper">
+  {{> sidebar }}
+    <div class="main-panel">
+      {{> navbar}}
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row news">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-rose card-header-text">
+                  <div class="card-text">
+                    <h4 class="card-title">Thêm mới xe</h4>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <form method="POST" action="/vehicle/store" class="form-horizontal">
+                    <div class="row name-vehicle">
+                        <label class="col-sm-2 col-form-label">Số xe</label>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="nameVehicle" autocomplete="off">
+                                <span class="bmd-help">Số theo từng chiếc xe (VD: Xe số 1)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row color-vehicle">
+                        <label class="col-sm-2 col-form-label">Màu xe / loại xe</label>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="colorVehicle" autocomplete="off">
+                                <span class="bmd-help">Màu hoặc loại xe (VD: Cam hoặc xuồng, drift)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="text-left">
+                          <a href="/vehicle/manage-vehicle" class="btn btn-rose">Quay Lại</a>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="text-right">
+                          <button type="submit" class="btn btn-rose">Thêm Mới</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div
+  class="sidebar"
+  data-color="rose"
+  data-background-color="black"
+  data-image="/assets/img/sidebar-1.jpg"
+>
+  <div class="logo text-center">
+    <a href="/" class="simple-text logo-normal">
+      <i class="fa fa-bus pr-2"></i>Dashboard
+    </a>
+  </div>
+  <div class="sidebar-wrapper">
+    <div class="user">
+      <div class="photo">
+        <img src="/assets/img/faces/avatar.jpg" />
+      </div>
+      <div class="user-info">
+        <a data-toggle="collapse" href="#collapseExample" class="username">
+          <span>
+            Admin
+            <b class="caret"></b>
+          </span>
+        </a>
+        <div class="collapse" id="collapseExample">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard/profile/{{user._id}}/detail">
+                <span class="sidebar-mini">
+                  <i class="fa fa-id-card-o"></i>
+                </span>
+                <span class="sidebar-normal"> Trang Cá Nhân </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard/logout">
+                <span class="sidebar-mini">
+                  <i class="fa fa-power-off"></i>
+                </span>
+                <span class="sidebar-normal"> Thoát </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">
+            <i class="material-icons">dashboard</i>
+            <p> Trang Chủ </p>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/vehicle/manage-vehicle">
+            <i class="material-icons">electric_car</i>
+            <p> Quản lý xe </p>
+          </a>
+        </li>
+    </ul>
+  </div>
+</div>
