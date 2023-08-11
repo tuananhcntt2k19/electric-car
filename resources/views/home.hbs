@@ -14,8 +14,8 @@
 <div class="main main-raised">
   <div class="container">
     <div class="material-datatables home-table">
-              <div width="300px">
-                <button id="reader" class="btn btn-rose"><i class="fa fa-plus"></i>Quét xe</button>  
+              <div id="reader" width="100%">
+                <button onclick="handleQrScan()">Quét xe</button>  
               </div>
                     <table id="datatables" class="table table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                       <thead>
@@ -80,21 +80,28 @@
 <script>
   const html5QrCode = new Html5Qrcode("reader");
   
-  const qrCodeSuccessCallback = (decodedText, decodedResult) => {
-    /* handle success */
-    console.log(decodedText);
-  };
+  function handleQrScan() {
+    const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+    const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+      /* handle success */
+      console.log(decodedText);
+      handleQrStop();
+    };
+    html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
+  }
 
-  const config = { fps: 10, qrbox: { width: 250, height: 250 } };
-
-  // Select back camera or fail with `OverconstrainedError`.
-  html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
-
-  // Stop scan 
-  html5QrCode.stop().then((ignore) => {
-  // QR Code scanning is stopped.
-
-  }).catch((err) => {
-  // Stop failed, handle it.
-  });
+  function handleQrStop() {
+    try {
+      html5QrCode
+        .stop()
+        .then((res) => {
+          html5QrCode.clear();
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  }
 </script>
