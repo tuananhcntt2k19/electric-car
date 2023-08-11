@@ -2,6 +2,7 @@
 
 .page-header {
   background-image: url("../../assets/img/banner.jpg");
+  min-height: 55vh;
 }
 
 /* BOOKING SECTION  */
@@ -221,4 +222,8 @@ footer {
   opacity: 0.3;
   margin: 0px 8px;
   background-color: #000;
+}
+
+.home-table {
+  padding: 12px;
 }

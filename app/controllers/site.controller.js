@@ -7,10 +7,16 @@ const { multipleMongooseToObject } = require("../../util/mongoose");
 
 const { mongo } = require("mongoose");
 const QRCode = require('qrcode');
+const {Html5QrcodeScanner} = require ("html5-qrcode");
 
 module.exports = {
   index: function (req, res) {
-    res.render("home", {})
+    listVehicle.find({})
+      .then((listVehicles) => {
+        res.render("home", {
+          listVehicles: multipleMongooseToObject(listVehicles)
+        })  
+      })
   },
 
   // Vehicle Manage
