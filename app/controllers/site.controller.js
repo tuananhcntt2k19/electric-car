@@ -7,7 +7,6 @@ const { multipleMongooseToObject } = require("../../util/mongoose");
 
 const { mongo } = require("mongoose");
 const QRCode = require('qrcode');
-const {Html5QrcodeScanner} = require ("html5-qrcode");
 
 module.exports = {
   index: function (req, res) {
